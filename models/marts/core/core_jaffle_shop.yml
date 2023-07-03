@@ -1,0 +1,16 @@
+version: 2
+
+models:
+  - name: fct_orders
+    columns:
+      - name: customer_id
+        tests:
+          - relationships:
+              field: customer_id
+              to: ref('stg_customers')
+      - name: order_id
+        tests:
+          - relationships:
+              field: order_id
+              to: ref('stg_orders')
+
