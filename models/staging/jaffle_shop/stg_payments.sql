@@ -6,7 +6,7 @@ with payments as (
         STATUS as payment_status, 
         AMOUNT/100 as payment_amount,
         CREATED as created_at
-    FROM RAW.STRIPE.PAYMENT
+    FROM {{ source('stripe', 'payment') }}
 )
 
 SELECT * FROM PAYMENTS
